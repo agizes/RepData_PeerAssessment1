@@ -38,7 +38,7 @@ rawdata$date <-as.Date(rawdata$date, format = "%Y-%m-%d")
 steps_per_day<-rawdata[complete.cases(rawdata),]%>%group_by(date)%>%summarise(total_steps=sum(steps,na.rm=TRUE))
 ```
 #### 2. Make a histogram of the total number of steps taken each day  
-```{r hist steps per day}
+```{r hist_steps_per_day}
 hist(steps_per_day$total_steps,main = "Steps per day",xlab = "Number of steps", ylab = "Frequency",col=3,breaks=50)
 rug(steps_per_day$total_steps)
 ```   
