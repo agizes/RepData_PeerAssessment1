@@ -109,7 +109,7 @@ Plot using the base plotting system
 with(steps_per_interval,plot(interval, steps_per_interval,main="Average steps per time interval", type="l"))
 ```
 
-![](PA1_template_files/figure-html/plot steps per interval-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_steps_per_interval-1.png)<!-- -->
 
 #### 2. Which 5-minute interval, on average across all the days in the dataset,contains the maximum number of steps?
 
@@ -197,7 +197,7 @@ hist(steps_per_day2$total_steps,main = "Steps per day (ii)",xlab = "Number of st
 rug(steps_per_day2$total_steps)
 ```
 
-![](PA1_template_files/figure-html/hist number of steps per day w/o NAs-1.png)<!-- -->
+![](PA1_template_files/figure-html/hist_number_of_steps_per_day_wo_NAs-1.png)<!-- -->
 
 **Mean of steps per day**
 
@@ -241,5 +241,5 @@ steps_per_interval2<-group_by(newrawdata,interval,weekday)%>%summarise(steps_per
 xyplot(steps_per_interval2~interval | weekday,data=steps_per_interval2,layout=c(1,2),type="l",ylab = "Number of steps",xlab="Interval")
 ```
 
-![](PA1_template_files/figure-html/plot steps inteval split by weekday-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_steps_inteval_split_by_weekday-1.png)<!-- -->
 
