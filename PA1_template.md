@@ -70,7 +70,7 @@ hist(steps_per_day$total_steps,main = "Steps per day",xlab = "Number of steps", 
 rug(steps_per_day$total_steps)
 ```
 
-![](PA1_template_files/figure-html/hist steps per day-1.png)<!-- -->
+![](PA1_template_files/figure-html/hist_steps_per_day-1.png)<!-- -->
 
 #### 3. Calculate and report the mean and median of the total number of steps taken per day  
 **Mean value for the number of steps taken per day**
