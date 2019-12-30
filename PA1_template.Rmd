@@ -64,7 +64,7 @@ We calculate the dataframe with intervals and average number of steps
 steps_per_interval<-rawdata[complete.cases(rawdata),]%>%group_by(interval)%>%summarise(steps_per_interval=mean(steps,na.rm=TRUE))
 ```
 Plot using the base plotting system
-```{r plot steps per interval}
+```{r plot_steps_per_interval}
 with(steps_per_interval,plot(interval, steps_per_interval,main="Average steps per time interval", type="l"))
 ```   
 
@@ -126,7 +126,7 @@ for(i in 1:nrow(newrawdata))
 ```
 
 #### 4. Histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-```{r hist number of steps per day w/o NAs}
+```{r hist_number_of_steps_per_day_wo_NAs}
 steps_per_day2<-group_by(newrawdata,date)%>%summarise(total_steps=sum(steps,na.rm=TRUE))
 hist(steps_per_day2$total_steps,main = "Steps per day (ii)",xlab = "Number of steps", ylab = "Frequency",col=3,breaks=50)
 rug(steps_per_day2$total_steps)
@@ -157,7 +157,7 @@ newrawdata$weekday<- factor((weekdays(newrawdata$date) %in% weekdays),
                     levels=c(FALSE, TRUE), labels=c('weekend', 'weekday'))
 ```                    
 #### 2.Panel plot containing a time series plot type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
-```{r plot steps inteval split by weekday}
+```{r plot_steps_inteval_split_by_weekday}
 steps_per_interval2<-group_by(newrawdata,interval,weekday)%>%summarise(steps_per_interval2=mean(steps,na.rm=TRUE))
 xyplot(steps_per_interval2~interval | weekday,data=steps_per_interval2,layout=c(1,2),type="l",ylab = "Number of steps",xlab="Interval")
 ```
